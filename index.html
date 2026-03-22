@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+  <title>San Pacific International — Premium Sculptures</title>
+  <meta name="description" content="Discover exquisite sculptures at San Pacific International. Explore our diverse collection that blends artistry and craftsmanship for your space." />
+  <link rel="canonical" href="https://sanpacificinternational.com/" />
+
+  <!-- Fonts: Cormorant Garamond (display) + Jost (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --cream:       #f5f0e8;
+      --cream-mid:   #ede6d8;
+      --parchment:   #e8deca;
+      --ink:         #1c1a16;
+      --ink-soft:    #3d3830;
+      --bronze:      #8b6b3e;
+      --bronze-light:#b8904f;
+      --bronze-pale: #d4b483;
+      --stone:       #9e9488;
+      --stone-light: #c8bfb0;
+      --white:       #fdfaf5;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+
+      --max-w: 1200px;
+      --section-gap: 7rem;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── UTILITIES ──────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bronze);
+    }
+
+    /* ─── HEADER ─────────────────────────────────────────── */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--parchment);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 5rem;
+    }
+    .site-logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-tagline {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--stone);
+      letter-spacing: 0.03em;
+    }
+    .header-since {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    #hero {
+      padding: 5rem 0 4rem;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: center;
+      min-height: 560px;
+    }
+    .hero-text {
+      padding-right: 5rem;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--bronze-pale);
+      max-width: 3rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--bronze);
+    }
+    .hero-body {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      max-width: 38ch;
+      margin-bottom: 2.5rem;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--ink);
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--ink);
+      transition: background 0.25s, color 0.25s;
+    }
+    .hero-cta:hover {
+      background: var(--bronze);
+      border-color: var(--bronze);
+    }
+    .hero-provenance {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    .hero-provenance::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--bronze-pale);
+      flex-shrink: 0;
+    }
+    .hero-provenance span {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .hero-image-wrap {
+      position: relative;
+    }
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1.5rem -1.5rem 1.5rem 1.5rem;
+      background: var(--parchment);
+      z-index: 0;
+    }
+    .hero-image-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 560px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    /* ─── DIVIDER ────────────────────────────────────────── */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.5rem 0;
+    }
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--stone-light));
+    }
+    .ornament-divider::after {
+      background: linear-gradient(to left, transparent, var(--stone-light));
+    }
+    .ornament-icon {
+      width: 5px;
+      height: 5px;
+      background: var(--bronze);
+      transform: rotate(45deg);
+    }
+
+    /* ─── SECTION HEADER ─────────────────────────────────── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-header .label {
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* ─── PRODUCTS ───────────────────────────────────────── */
+    #products {
+      padding: var(--section-gap) 0;
+      background: var(--white);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .product-card {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+    .product-img-wrap {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--cream-mid);
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      padding: 2rem;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.04);
+    }
+    .product-info {
+      padding: 1.75rem 1.75rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-number {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--bronze-pale);
+      margin-bottom: 0.4rem;
+    }
+    .product-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+    .btn-price {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      border: 1px solid var(--bronze-pale);
+      padding: 0.75rem 1.5rem;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+    .btn-price:hover {
+      background: var(--bronze);
+      border-color: var(--bronze);
+      color: var(--cream);
+    }
+
+    /* ─── WIDE IMAGE BANNER ──────────────────────────────── */
+    #banner {
+      padding: 0;
+      overflow: hidden;
+    }
+    .banner-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      min-height: 500px;
+    }
+    .banner-text {
+      background: var(--ink);
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+    }
+    .banner-text .label { color: var(--bronze-pale); margin-bottom: 1rem; }
+    .banner-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+    .banner-body {
+      font-size: 0.875rem;
+      color: var(--stone-light);
+      line-height: 1.8;
+    }
+    .banner-image {
+      overflow: hidden;
+    }
+    .banner-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ─── CATEGORIES ─────────────────────────────────────── */
+    #categories {
+      padding: var(--section-gap) 0;
+      background: var(--cream);
+    }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+      gap: 0;
+    }
+    .cat-divider {
+      background: var(--parchment);
+      align-self: stretch;
+    }
+    .category-item {
+      padding: 2rem 2.5rem;
+    }
+    .category-item:hover .cat-name {
+      color: var(--bronze);
+    }
+    .cat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--parchment);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .cat-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .cat-desc {
+      font-size: 0.82rem;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    /* ─── REVIEWS ────────────────────────────────────────── */
+    #reviews {
+      padding: var(--section-gap) 0;
+      background: var(--parchment);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: var(--white);
+      padding: 2.25rem;
+      position: relative;
+    }
+    .review-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 1rem;
+      left: 1.75rem;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-style: italic;
+      color: var(--bronze-pale);
+      line-height: 1;
+      opacity: 0.5;
+    }
+    .review-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+      padding-top: 1.5rem;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .review-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bronze);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cream);
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    /* ─── FAQ ────────────────────────────────────────────── */
+    #faq {
+      padding: var(--section-gap) 0;
+      background: var(--white);
+    }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .faq-sidebar {
+      position: sticky;
+      top: 7rem;
+    }
+    .faq-sidebar-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .faq-sidebar-body {
+      font-size: 0.875rem;
+      color: var(--stone);
+      line-height: 1.8;
+    }
+    .faq-list { list-style: none; }
+    .faq-item {
+      border-top: 1px solid var(--parchment);
+      padding: 1.5rem 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--parchment); }
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .faq-a {
+      font-size: 0.875rem;
+      color: var(--stone);
+      line-height: 1.8;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    #site-footer {
+      background: var(--ink);
+      color: var(--stone-light);
+    }
+    .footer-inner {
+      padding: 3rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-logo img {
+      height: 36px;
+      opacity: 0.6;
+      filter: brightness(10);
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--stone);
+    }
+    .footer-craft {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      animation: fadeUp 0.7s ease both;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-inner       { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-text        { padding-right: 0; }
+      .hero-image-wrap::before { display: none; }
+      .hero-image-wrap img { height: 400px; }
+      .products-grid    { grid-template-columns: 1fr 1fr; }
+      .banner-inner     { grid-template-columns: 1fr; }
+      .banner-text      { padding: 3rem 2.5rem; }
+      .categories-grid  { grid-template-columns: 1fr 1fr; }
+      .cat-divider      { display: none; }
+      .category-item    { border-bottom: 1px solid var(--parchment); }
+      .faq-layout       { grid-template-columns: 1fr; gap: 3rem; }
+      .faq-sidebar      { position: static; }
+    }
+    @media (max-width: 640px) {
+      :root { --section-gap: 4rem; }
+      .container        { padding: 0 1.25rem; }
+      .header-tagline, .header-since { display: none; }
+      .products-grid    { grid-template-columns: 1fr; }
+      .reviews-grid     { grid-template-columns: 1fr; }
+      .categories-grid  { grid-template-columns: 1fr; }
+      .hero-title       { font-size: 2rem; }
+      .footer-craft     { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="https://sanpacificinternational.com/" class="site-logo" rel="home">
+          <img
+            src="images/logo.svg"
+            alt="San Pacific International"
+            width="300" height="100"
+          />
+        </a>
+        <span class="header-tagline">Artistry in Every Piece</span>
+        <span class="header-since">Est. 1973 · San Francisco</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <div class="hero-eyebrow fade-up">
+              <span class="label">San Pacific International</span>
+            </div>
+            <h1 class="hero-title fade-up delay-1">
+              Sculptures That<br>
+              <em>Transform</em> Every Space
+            </h1>
+            <p class="hero-body fade-up delay-2">
+              San Pacific International transforms nature's beauty into timeless brass and aluminum sculptures that captivate with their rich detail and vibrant finishes. Each piece emerges from skilled hands, blending artistry and craftsmanship through a meticulous process that brings marine life and wildlife motifs to life.
+            </p>
+            <a href="#products" class="hero-cta fade-up delay-3">
+              Explore Collection
+            </a>
+            <div class="hero-provenance fade-up delay-4">
+              <span>Handcrafted · Collector's Quality</span>
+            </div>
+          </div>
+          <div class="hero-image-wrap fade-up delay-2">
+            <img
+              src="https://sanpacificinternational.com/wp-content/uploads/2025/09/san-pacific-international-sculptures-1-1024x853.jpg"
+              alt="San Pacific International sculpture"
+              width="1024" height="853"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="ornament-divider">
+        <div class="ornament-icon"></div>
+        <div class="ornament-icon"></div>
+        <div class="ornament-icon"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════
+         PRODUCTS
+    ═══════════════════════════════════════════════ -->
+    <section id="products">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Featured Pieces</span>
+          <h2 class="section-title">Top San Pacific International Sculptures</h2>
+        </div>
+        <div class="products-grid">
+
+          <!-- Dolphin -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://sanpacificinternational.com/wp-content/uploads/2025/09/san-pacific-international-sculptures-11.jpg"
+                alt="San Pacific International Dolphin Sculpture"
+                width="500" height="500" loading="lazy"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-number">No. 01</span>
+              <h3 class="product-name">Dolphin Sculpture</h3>
+              <p class="product-desc">A graceful, highly detailed brass dolphin sculpture that captures the fluid motion of marine life, perfect for both indoor display and outdoor gardens.</p>
+              <a href="#" class="btn-price">View Price</a>
+            </div>
+          </div>
+
+          <!-- Manatee -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://sanpacificinternational.com/wp-content/uploads/2025/09/san-pacific-international-sculptures-22.jpg"
+                alt="San Pacific International Manatee and Friends Sculpture"
+                width="500" height="500" loading="lazy"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-number">No. 02</span>
+              <h3 class="product-name">Manatee &amp; Friends Sculpture</h3>
+              <p class="product-desc">This charming piece showcases a group of manatees in lifelike poses, crafted with exquisite patina finishes that bring warmth and character to any space.</p>
+              <a href="#" class="btn-price">View Price</a>
+            </div>
+          </div>
+
+          <!-- Garden Statue -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://sanpacificinternational.com/wp-content/uploads/2025/09/san-pacific-international-sculptures-33.jpg"
+                alt="San Pacific International Contentment Garden Statue"
+                width="500" height="500" loading="lazy"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-number">No. 03</span>
+              <h3 class="product-name">Contentment Garden Statue</h3>
+              <p class="product-desc">A serene garden statue featuring natural wildlife motifs, designed with durable materials and weather-resistant finishes to enhance outdoor living areas beautifully.</p>
+              <a href="#" class="btn-price">View Price</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         WIDE IMAGE BANNER
+    ═══════════════════════════════════════════════ -->
+    <section id="banner">
+      <div class="banner-inner">
+        <div class="banner-text">
+          <span class="label">Our Collection</span>
+          <h2 class="banner-heading">
+            Discover a World of<br>Artistic Elegance
+          </h2>
+          <p class="banner-body">
+            San Pacific International's diverse range of sculptures and decorative art brings nature and marine life into your living spaces — each piece a testament to enduring craftsmanship.
+          </p>
+        </div>
+        <div class="banner-image">
+          <img
+            src="https://sanpacificinternational.com/wp-content/uploads/2025/09/san-pacific-international-sculptures-2.jpg"
+            alt="SPI Sculpture collection"
+            width="1600" height="1000" loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         CATEGORIES
+    ═══════════════════════════════════════════════ -->
+    <section id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Explore By Type</span>
+          <h2 class="section-title">What We Craft</h2>
+        </div>
+        <div class="categories-grid">
+
+          <div class="category-item">
+            <div class="cat-num">01</div>
+            <h3 class="cat-name">Marine &amp; Nature Sculptures</h3>
+            <p class="cat-desc">Expertly crafted dolphins, whales, turtles, mermaids, and other marine-inspired sculptures designed to captivate and inspire.</p>
+          </div>
+          <div class="cat-divider"></div>
+
+          <div class="category-item">
+            <div class="cat-num">02</div>
+            <h3 class="cat-name">Garden Statues</h3>
+            <p class="cat-desc">Durable garden statues that combine artistic beauty and weather-resistant materials, creating stunning focal points for any garden or patio.</p>
+          </div>
+          <div class="cat-divider"></div>
+
+          <div class="category-item">
+            <div class="cat-num">03</div>
+            <h3 class="cat-name">Indoor Decorative Art</h3>
+            <p class="cat-desc">Gallery-quality sculptures and unique home décor pieces made from brass, aluminum, resin, and cast iron — perfect for collectors and design enthusiasts.</p>
+          </div>
+          <div class="cat-divider"></div>
+
+          <div class="category-item">
+            <div class="cat-num">04</div>
+            <h3 class="cat-name">Birdbaths, Fountains &amp; Benches</h3>
+            <p class="cat-desc">Beautifully crafted functional art — birdbaths, fountains, benches, and sundials that blend durability with timeless outdoor aesthetics.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         REVIEWS
+    ═══════════════════════════════════════════════ -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Collectors &amp; Designers</span>
+          <h2 class="section-title">What People Say</h2>
+        </div>
+        <div class="reviews-grid">
+
+          <div class="review-card">
+            <p class="review-text">My San Pacific International dolphin sculpture has completely transformed my garden's ambiance. The detail is extraordinary — every curve and texture feels alive. Truly a worthwhile investment in art that lasts.</p>
+            <div class="review-author">
+              <div class="review-dot">E</div>
+              <span class="review-name">Emily Ross</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-text">As an interior designer, I seek pieces that bring character and sophistication to a space. I purchased a brass whale statue for a client's coastal-themed living room, and the craftsmanship exceeded expectations.</p>
+            <div class="review-author">
+              <div class="review-dot">J</div>
+              <span class="review-name">James Harrington</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-text">The garden bench with the turtle motif from SPI has become my favorite spot to relax. The blend of cast iron and brass ensures durability, and the hand-applied patina gives it an elegant finish.</p>
+            <div class="review-author">
+              <div class="review-dot">L</div>
+              <span class="review-name">Linda Chen</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════ -->
+    <section id="faq">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-sidebar">
+            <span class="label" style="display:block;margin-bottom:1rem;">Questions</span>
+            <h2 class="faq-sidebar-title">San Pacific International FAQ</h2>
+            <p class="faq-sidebar-body">Everything you need to know about our sculptures, materials, care, and where to find them.</p>
+          </div>
+          <ul class="faq-list">
+            <li class="faq-item">
+              <h3 class="faq-q">What materials are SPI sculptures made from?</h3>
+              <p class="faq-a">San Pacific International sculptures are crafted using high-quality materials such as brass, aluminum, cast iron, and resin, ensuring both beauty and durability for indoor and outdoor use.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">Are the sculptures suitable for outdoor display?</h3>
+              <p class="faq-a">Yes, many SPI sculptures feature weather-resistant finishes that protect them from the elements, making them ideal for gardens, patios, and other outdoor spaces.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">How are the finishes applied?</h3>
+              <p class="faq-a">Each sculpture receives hand-applied patina finishes using a proprietary process that involves blow torches and chemical treatments, creating unique, layered effects on every piece.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">Can I find SPI sculptures in retail stores?</h3>
+              <p class="faq-a">Yes, San Pacific International products are often available through specialty décor retailers and collectible galleries such as Fine Decor Direct and Biggs Ltd.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">Are SPI sculptures considered collectible art?</h3>
+              <p class="faq-a">Absolutely. Due to their craftsmanship, unique finishes, and limited production, many SPI sculptures are highly valued by collectors and interior designers alike.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">How do I care for and maintain my SPI sculpture?</h3>
+              <p class="faq-a">Regular dusting and gentle cleaning with a soft cloth will help maintain the sculpture's appearance. For outdoor pieces, occasional checks for patina wear and protection from extreme weather are recommended.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">Can I order custom or commissioned pieces?</h3>
+              <p class="faq-a">While SPI mainly produces established designs, some retailers or galleries may assist with special requests or limited editions — it's best to contact authorized dealers for details.</p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-q">What is the typical size range of SPI sculptures?</h3>
+              <p class="faq-a">SPI offers a wide variety of sizes, from small indoor gallery pieces to larger garden statues and functional art like benches and fountains. Specific dimensions vary by model.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="https://sanpacificinternational.com/" class="footer-logo">
+          <img
+            src="https://sanpacificinternational.com/wp-content/uploads/2025/09/san-pacific-international-sculptures-3.jpg"
+            alt="San Pacific International"
+            width="200" height="67"
+          />
+        </a>
+        <span class="footer-craft">Handcrafted since 1973</span>
+        <p class="footer-copy">Copyright © 2026 — San Pacific International</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered fade-up for cards/sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.product-card, .review-card, .category-item, .faq-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
